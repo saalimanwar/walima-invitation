@@ -240,12 +240,13 @@ body::before {
 }
 .groom-name, .bride-name {
   font-family: 'Pinyon Script', cursive;
-  font-size: clamp(54px, 11vw, 84px);
+  font-size: clamp(38px, 9vw, 84px);
   line-height: 1.05;
   color: var(--burgundy);
   display: block;
   text-shadow: 0 2px 12px rgba(107,39,55,0.12);
   letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 .amp {
   font-family: 'Cormorant Garamond', serif;
@@ -648,16 +649,19 @@ body::before {
   .bismillah-en { letter-spacing: 0.14em; font-size: 10px; }
 
   /* details — stack vertically */
+ /* details — keep 3 columns, shrink text */
   .details-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
   .detail-cell {
-    border-right: none;
-    border-bottom: 0.5px solid rgba(168,117,42,0.18);
-    padding: 16px 12px;
+    border-right: 0.5px solid rgba(168,117,42,0.20);
+    border-bottom: none;
+    padding: 14px 6px;
   }
-  .detail-cell:last-child { border-bottom: none; }
-  .detail-sub { font-size: 11px; }
+  .detail-cell:last-child { border-right: none; }
+  .detail-value { font-size: 13px; }
+  .detail-sub { font-size: 10px; }
+  .detail-label { font-size: 8px; letter-spacing: 0.20em; }
 
   /* countdown — 2x2 grid on mobile */
   .countdown-boxes {
@@ -950,7 +954,7 @@ body::before {
           text-transform:uppercase;
           color:var(--ink-light);
           margin-top:4px;
-          margin-bottom:20px;
+          margin-bottom:8px;
         ">D/O &nbsp;xyz</span>
 
       </div>
@@ -1086,7 +1090,7 @@ body::before {
 
       <!-- RSVP -->
       <div class="rsvp-section fade" style="animation-delay:1.2s">
-        <span class="section-title">✦ &nbsp; R.S.V.P. &nbsp; ✦</span>
+        <span class="section-title">✦ &nbsp; With The Best Compplement From!! &nbsp; ✦</span>
         <p class="rsvp-deadline">
           Your presence shall be our greatest honour.
         </p>
