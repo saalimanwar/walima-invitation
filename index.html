@@ -284,35 +284,61 @@ body::before {
 
 /* ── EVENT DETAILS ── */
 .details-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 28px 0;
-  border: 0.5px solid rgba(168,117,42,0.25);
-  border-radius: 1px;
-  overflow: hidden;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  position: relative;
 }
 .detail-cell {
-  padding: 24px 16px;
+  width: 140px;
+}
+.detail-cell {
+  padding: 24px 12px 20px;
   text-align: center;
-  border-right: 0.5px solid rgba(168,117,42,0.20);
-  background: rgba(253,246,233,0.7);
-  transition: background 0.3s, transform 0.2s;
+  background: rgba(253,246,233,0.75);
+  border: 0.5px solid rgba(168,117,42,0.22);
+  border-radius: 1px;
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  box-shadow: 0 2px 14px rgba(42,26,14,0.07), inset 0 1px 0 rgba(255,245,210,0.6);
 }
-.detail-cell:last-child { border-right: none; }
+/* top gold accent bar */
 .detail-cell::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(168,117,42,0.06) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s;
+  top: 0; left: 20%; right: 20%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold-mid), transparent);
+  opacity: 0.7;
 }
-.detail-cell:hover::before { opacity: 1; }
-.detail-cell:hover { background: rgba(238,220,170,0.25); }
+/* corner diamond top-left */
+.detail-cell::after {
+  content: '';
+  position: absolute;
+  top: 8px; left: 8px;
+  width: 4px; height: 4px;
+  background: var(--gold-light);
+  transform: rotate(45deg);
+  opacity: 0.6;
+}
+.detail-cell:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(42,26,14,0.13);
+  background: rgba(248,238,216,0.9);
+}
+/* icon area */
+.detail-icon {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 8px;
+  line-height: 1;
+  filter: sepia(1) saturate(1.5) hue-rotate(5deg);
+}
 .detail-label {
-  font-size: 9px;
+  font-size: 8px;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--gold);
@@ -321,18 +347,28 @@ body::before {
 }
 .detail-value {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(17px, 3.2vw, 24px);
+  font-size: clamp(14px, 2.8vw, 22px);
   font-weight: 600;
-  color: var(--ink);
+  color: var(--burgundy);
   display: block;
   line-height: 1.2;
 }
 .detail-sub {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--ink-light);
   font-style: italic;
-  margin-top: 4px;
+  margin-top: 6px;
   display: block;
+  line-height: 1.5;
+}
+/* bottom gold line */
+.detail-bottom {
+  display: block;
+  width: 30px;
+  height: 0.5px;
+  background: var(--gold-light);
+  margin: 10px auto 0;
+  opacity: 0.6;
 }
 
 /* ── COUNTDOWN ── */
@@ -352,36 +388,70 @@ body::before {
 .countdown-boxes {
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 .cd-box {
-  background: linear-gradient(145deg, rgba(253,246,233,0.9) 0%, rgba(245,232,204,0.6) 100%);
-  border: 0.5px solid rgba(168,117,42,0.28);
-  border-radius: 1px;
-  padding: 16px 20px 12px;
-  min-width: 78px;
+  width: 140px;
+  padding: 24px 12px 20px;
   text-align: center;
-  box-shadow: 0 2px 12px rgba(42,26,14,0.08), inset 0 1px 0 rgba(255,245,210,0.7);
-  transition: transform 0.25s, box-shadow 0.25s;
+  background: rgba(253,246,233,0.75);
+  border: 0.5px solid rgba(168,117,42,0.22);
+  border-radius: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  box-shadow: 0 2px 14px rgba(42,26,14,0.07), inset 0 1px 0 rgba(255,245,210,0.6);
 }
-.cd-box:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(42,26,14,0.14); }
+/* top gold accent bar */
+.cd-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold-mid), transparent);
+  opacity: 0.7;
+}
+/* corner diamond */
+.cd-box::after {
+  content: '';
+  position: absolute;
+  top: 8px; left: 8px;
+  width: 4px; height: 4px;
+  background: var(--gold-light);
+  transform: rotate(45deg);
+  opacity: 0.6;
+}
+.cd-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(42,26,14,0.13);
+  background: rgba(248,238,216,0.9);
+}
 .cd-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 38px;
+  font-size: clamp(28px, 4vw, 38px);
   font-weight: 300;
   color: var(--burgundy);
   display: block;
   line-height: 1;
   letter-spacing: -0.02em;
+  margin-bottom: 2px;
 }
 .cd-unit {
-  font-size: 9px;
-  letter-spacing: 0.22em;
+  font-size: 8px;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--gold-mid);
+  color: var(--gold);
   margin-top: 6px;
   display: block;
+}
+.cd-bottom {
+  display: block;
+  width: 30px;
+  height: 0.5px;
+  background: var(--gold-light);
+  margin: 10px auto 0;
+  opacity: 0.6;
 }
 
 /* ── VENUE ── */
@@ -645,6 +715,7 @@ body::before {
   .wrapper { padding: 16px 10px 72px; }
   .card { padding: 40px 20px 40px; }
   .corner { width: 75px; height: 75px; }
+  .detail-cell { width: calc(33% - 8px); }
 
   /* inner border tighter on small screens */
   .card::before { inset: 10px; }
@@ -667,17 +738,17 @@ body::before {
   .detail-sub { font-size: 10px; }
   .detail-label { font-size: 8px; letter-spacing: 0.20em; }
 
-  /* countdown — 4 columns single row on mobile */
+ /* countdown — 4 columns single row on mobile */
   .countdown-boxes {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 6px;
     max-width: 100%;
   }
-  .cd-box { min-width: unset; width: 100%; padding: 10px 4px 8px; }
+  .cd-box { width: 100%; padding: 10px 4px 8px; }
   .cd-num { font-size: 22px; }
   .cd-unit { font-size: 7px; letter-spacing: 0.12em; margin-top: 4px; }
-
+  
   /* names */
   .groom-name, .bride-name { font-size: clamp(46px, 14vw, 64px); }
 
@@ -995,45 +1066,61 @@ body::before {
       </div>
 
       <!-- EVENT DETAILS -->
-      <div class="details-grid fade" style="animation-delay:0.9s">
-        <div class="detail-cell">
-          <span class="detail-label">Day</span>
-          <span class="detail-value">Friday</span>
-          <span class="detail-sub">Jumu'ah</span>
-        </div>
-        <div class="detail-cell">
-          <span class="detail-label">Date</span>
-          <span class="detail-value">08 May 2026</span>
-          <span class="detail-sub">21 Dhul Qadah 1447</span>
-        </div>
-        <div class="detail-cell">
-          <span class="detail-label">Time</span>
-          <span class="detail-value">12:00 Noon</span>
-          <span class="detail-sub">Onwards</span>
-        </div>
-      </div>
+      <div style="display:flex; justify-content:center; margin: 28px 0;">
+  <div class="details-grid fade" style="animation-delay:0.9s; display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+
+    <div class="detail-cell">
+      <span class="detail-icon">☽</span>
+      <span class="detail-label">Day</span>
+      <span class="detail-value">Friday</span>
+      <span class="detail-sub">Jumu'ah</span>
+      <span class="detail-bottom"></span>
+    </div>
+
+    <div class="detail-cell">
+      <span class="detail-icon">✦</span>
+      <span class="detail-label">Date</span>
+      <span class="detail-value">08 May 2026</span>
+      <span class="detail-sub">21 Dhul Qadah<br>1447 AH</span>
+      <span class="detail-bottom"></span>
+    </div>
+
+    <div class="detail-cell">
+      <span class="detail-icon">◷</span>
+      <span class="detail-label">Time</span>
+      <span class="detail-value">12:00 Noon</span>
+      <span class="detail-sub">Onwards</span>
+      <span class="detail-bottom"></span>
+    </div>
+
+  </div>
+</div>
 
       <!-- COUNTDOWN -->
       <div class="countdown-section fade" style="animation-delay:1.0s">
         <span class="countdown-label">✦ &nbsp; Counting Down to the Celebration &nbsp; ✦</span>
         <div class="countdown-boxes">
-          <div class="cd-box">
-            <span class="cd-num" id="cd-days">—</span>
-            <span class="cd-unit">Days</span>
-          </div>
-          <div class="cd-box">
-            <span class="cd-num" id="cd-hours">—</span>
-            <span class="cd-unit">Hours</span>
-          </div>
-          <div class="cd-box">
-            <span class="cd-num" id="cd-mins">—</span>
-            <span class="cd-unit">Minutes</span>
-          </div>
-          <div class="cd-box">
-            <span class="cd-num" id="cd-secs">—</span>
-            <span class="cd-unit">Seconds</span>
-          </div>
-        </div>
+  <div class="cd-box">
+    <span class="cd-num" id="cd-days">—</span>
+    <span class="cd-unit">Days</span>
+    <span class="cd-bottom"></span>
+  </div>
+  <div class="cd-box">
+    <span class="cd-num" id="cd-hours">—</span>
+    <span class="cd-unit">Hours</span>
+    <span class="cd-bottom"></span>
+  </div>
+  <div class="cd-box">
+    <span class="cd-num" id="cd-mins">—</span>
+    <span class="cd-unit">Minutes</span>
+    <span class="cd-bottom"></span>
+  </div>
+  <div class="cd-box">
+    <span class="cd-num" id="cd-secs">—</span>
+    <span class="cd-unit">Seconds</span>
+    <span class="cd-bottom"></span>
+  </div>
+</div>
       </div>
 
       <!-- DIVIDER -->
@@ -1174,7 +1261,7 @@ body::before {
 
 <!-- AUDIO -->
 <audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
+  <source src="nasheed.mp3" type="audio/mpeg">
 </audio>
 
 <div class="audio-note" id="audioNote">Music paused</div>
