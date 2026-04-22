@@ -667,16 +667,16 @@ body::before {
   .detail-sub { font-size: 10px; }
   .detail-label { font-size: 8px; letter-spacing: 0.20em; }
 
-  /* countdown — 2x2 grid on mobile */
+  /* countdown — 4 columns single row on mobile */
   .countdown-boxes {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    max-width: 260px;
-    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    max-width: 100%;
   }
-  .cd-box { min-width: unset; width: 100%; padding: 14px 10px 10px; }
-  .cd-num { font-size: 34px; }
+  .cd-box { min-width: unset; width: 100%; padding: 10px 4px 8px; }
+  .cd-num { font-size: 22px; }
+  .cd-unit { font-size: 7px; letter-spacing: 0.12em; margin-top: 4px; }
 
   /* names */
   .groom-name, .bride-name { font-size: clamp(46px, 14vw, 64px); }
