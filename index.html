@@ -164,13 +164,49 @@ body::before { content:''; position:fixed; inset:0; z-index:0; background-image:
 
       <!-- BISMILLAH -->
       <div class="bismillah-wrap fade" style="animation-delay:0.2s">
-        <span class="bismillah-ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>
-        <div style="height:12px"></div>
-        <span class="bismillah-en">In the Name of Allah, the Most Gracious, the Most Merciful</span>
-      </div>
 
-      <div class="divider fade" style="animation-delay:0.35s"><div class="divider-line"></div><div class="divider-small"></div><div class="divider-diamond"></div><div class="divider-small"></div><div class="divider-line"></div></div>
+  <!-- decorative top dots -->
+  <div style="display:flex;justify-content:center;gap:8px;margin-bottom:16px;">
+    <span style="width:3px;height:3px;background:var(--gold-light);transform:rotate(45deg);display:block;opacity:0.6;"></span>
+    <span style="width:5px;height:5px;background:var(--gold);transform:rotate(45deg);display:block;opacity:0.7;"></span>
+    <span style="width:3px;height:3px;background:var(--gold-light);transform:rotate(45deg);display:block;opacity:0.6;"></span>
+  </div>
 
+  <!-- main arabic -->
+  <span class="bismillah-ar" style="
+    font-family:'Scheherazade New','Amiri',serif;
+    font-size:clamp(38px,8vw,64px);
+    font-weight:700;
+    color:var(--gold);
+    letter-spacing:0.08em;
+    line-height:1.9;
+    display:block;
+    direction:rtl;
+    text-align:center;
+    text-shadow:
+      0 2px 16px rgba(168,117,42,0.30),
+      0 1px 2px rgba(168,117,42,0.20),
+      0 0px 1px rgba(168,117,42,0.10);
+  ">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>
+
+  <!-- thin gold rule -->
+  <div style="display:flex;align-items:center;gap:10px;margin:10px auto 10px;max-width:300px;">
+    <div style="flex:1;height:0.5px;background:linear-gradient(to right,transparent,var(--gold-mid));opacity:0.6;"></div>
+    <span style="width:5px;height:5px;background:var(--gold);transform:rotate(45deg);display:block;flex-shrink:0;"></span>
+    <div style="flex:1;height:0.5px;background:linear-gradient(to left,transparent,var(--gold-mid));opacity:0.6;"></div>
+  </div>
+
+  <span class="bismillah-en" style="
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(10px,1.8vw,13px);
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--ink-light);
+    display:block;
+    text-align:center;
+  ">In the Name of Allah, the Most Gracious, the Most Merciful</span>
+
+</div>
       <p class="with-blessings fade" style="animation-delay:0.4s">With the Blessings of Allah</p>
 
 <p class="invite-text fade" style="animation-delay:0.5s">
