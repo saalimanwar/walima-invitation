@@ -286,7 +286,7 @@ body::before { content:''; position:fixed; inset:0; z-index:0; background-image:
       <!-- EVENT DETAILS -->
       <div style="display:flex;justify-content:center;margin:28px 0;">
         <div class="details-grid fade" style="animation-delay:0.9s;">
-          <div class="detail-cell"><span class="detail-icon">☽</span><span class="detail-label">Day</span><span class="detail-value">Sunday</span><span class="detail-sub">Hafta</span><span class="detail-bottom"></span></div>
+          <div class="detail-cell"><span class="detail-icon">☽</span><span class="detail-label">Day</span><span class="detail-value">Saturday</span><span class="detail-sub">Hafta</span><span class="detail-bottom"></span></div>
           <div class="detail-cell"><span class="detail-icon">✦</span><span class="detail-label">Date</span><span class="detail-value">09 May 2026</span><span class="detail-sub">22 Dhul Qa'dah<br>1447 AH</span><span class="detail-bottom"></span></div>
           <div class="detail-cell"><span class="detail-icon">◷</span><span class="detail-label">Time</span><span class="detail-value">12:00 Noon</span><span class="detail-sub">Onwards</span><span class="detail-bottom"></span></div>
         </div>
@@ -422,7 +422,7 @@ const pc = document.getElementById('particles');
 const types = [{color:'#e8c8c0',size:6},{color:'#b8caa8',size:5},{color:'#dbb96a',size:3},{color:'#d9a0a0',size:4}];
 for(let i=0;i<22;i++){const t=types[i%types.length];const el=document.createElement('div');el.className='particle';const s=t.size+Math.random()*4;el.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s}px;background:${t.color};border-radius:100% 0 100% 0;animation-duration:${10+Math.random()*12}s;animation-delay:${Math.random()*15}s;opacity:0;`;pc.appendChild(el);}
 
-const walimaDate = new Date('2026-05-09T12:00:00');
+const walimaDate = new Date('2026-05-09T12:00:00+05:30');
 function updateCD(){const diff=walimaDate-new Date();if(diff<=0){['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id=>document.getElementById(id).textContent='0');return;}document.getElementById('cd-days').textContent=Math.floor(diff/86400000);document.getElementById('cd-hours').textContent=String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');document.getElementById('cd-mins').textContent=String(Math.floor((diff%3600000)/60000)).padStart(2,'0');document.getElementById('cd-secs').textContent=String(Math.floor((diff%60000)/1000)).padStart(2,'0');}
 updateCD();setInterval(updateCD,1000);
 
