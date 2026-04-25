@@ -36,7 +36,24 @@ body::before { content:''; position:fixed; inset:0; z-index:0; background-image:
 .fade { animation:fadeUp .9s both; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
 .bismillah-wrap { text-align:center; margin-bottom:32px; }
-.bismillah-ar { font-family:'Scheherazade New','Amiri',serif; font-size:clamp(32px,7vw,54px); color:var(--gold); letter-spacing:.06em; line-height:2; display:block; direction:rtl; text-shadow:0 1px 12px rgba(168,117,42,.22); }
+/*.bismillah-ar { font-family:'Scheherazade New','Amiri',serif; font-size:clamp(32px,7vw,54px); color:var(--gold); letter-spacing:.06em; line-height:2; display:block; direction:rtl; text-shadow:0 1px 12px rgba(168,117,42,.22); }*/
+.bismillah-ar{
+  font-family:'Scheherazade New','Amiri',serif;
+  font-size:clamp(22px,6vw,54px);
+  font-weight:700;
+  color:var(--gold);
+  letter-spacing:.04em;
+  line-height:2;
+  display:block;
+  direction:rtl;
+  text-align:center;
+  white-space:nowrap;
+  width:100%;
+  overflow:visible;
+  -webkit-text-size-adjust:none;
+  text-size-adjust:none;
+  text-shadow:0 1px 12px rgba(168,117,42,0.22),0 0px 1px rgba(168,117,42,0.15);
+}
 .bismillah-en { font-family:'Cormorant Garamond',serif; font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-light); margin-top:6px; display:block; }
 .divider { display:flex; align-items:center; gap:10px; margin:22px auto; max-width:360px; }
 .divider-line { flex:1; height:.5px; background:linear-gradient(to right,transparent,var(--gold-mid),transparent); opacity:.8; }
